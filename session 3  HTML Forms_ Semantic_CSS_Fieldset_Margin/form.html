@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Elements</title>
+</head>
+<body>
+  <form action="result.html" method="GET" name="myfrom" >
+    <div>
+      <label for="cars">Choose a car:</label>
+      <br>
+      <select name="cars-select" id="cars" size="8" multiple required>
+        <optgroup label="Expensive Cars">
+          <option value="porsche" selected>Porsche</option>
+          <option value="Golf">Golf</option>
+        </optgroup>
+        <optgroup label="Tüplü ve Öfkeli">
+        <option value="kartal">Kartal</option>
+        <option value="samara">Samara</option>
+        <option value="Murat-131">Murat 131</option>
+      </optgroup>
+      </select>
+    </div>
+    <br><br><br>
+    <div>
+      <label for="message">Enter your comment here: </label>
+      <br>
+      <textarea name="comment" 
+      id="message" 
+      cols="30" rows="10" 
+      placeholder="Enter your comment"
+      maxlength="9"
+      style="resize:none"
+      required
+      ></textarea>
+<br><br>
+      <div>
+        <label for="mybrowser">Browser</label>
+        <br>
+        <input type="text" name="Browser-option" id="mybrowser" list="browsers" />
+        <datalist id="browsers">
+          <option value="Chrome"></option>
+          <option value="Safari"></option>
+          <option value="Brave"></option>
+          <option value="Mozilla"></option>
+          <option value="Opera"></option>
+          <option value="IE-10"></option>
+          <option value="IE-12"></option>
+        </datalist>
+        
+
+
+      </div>
+    </div>
+    <br><br>
+    <fieldset style="width: 50%;">
+      <legend style="text-align: center;">Personal Info:</legend>
+      <label for="firstname">First Name:</label>
+      <input type="text" name="name" id="firstname" placeholder="Tuncay">
+      <br><br>
+      <label for="lastname">Last Name:</label>
+      <input type="text" name="lastname" id="lastname" placeholder="Arıcan">
+    </fieldset>
+    <br><br>
+    <input type="submit" value="SEND">
+  </form>
+</body>
+</html>
