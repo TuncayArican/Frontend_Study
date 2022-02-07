@@ -121,7 +121,7 @@ canNest([9, 9, 8], [8, 9]) ➞ false
 canNest([1, 2, 3, 4], [2, 3]) ➞ false
  */
 
-let list1=[3, 1];
+/* let list1=[3, 1];
 let list2=[4,0];
 function canNest(list1,list2){
 let list3=list1.sort(function(a, b){return a - b})
@@ -131,7 +131,9 @@ if ((list4[0]<list3[0]) && (list4[list4.length-1] > list3[list3.length-1])) {
 }else{
    return false;
 }
-}console.log(canNest(list1,list2)); 
+}console.log(canNest(list1,list2));  */
+
+//--------------------------------------------
 
 
 /* The left shift operation is similar to multiplication by powers of two.
@@ -141,9 +143,9 @@ Sample calculation using the left shift operator (<<):
 10 << 3 = 10 * 2^3 = 10 * 8 = 80
 -32 << 2 = -32 * 2^2 = -32 * 4 = -128
 5 << 2 = 5 * 2^2 = 5 * 4 = 20
-Write a function that mimics (without the use of <<) the left shift operator and returns the result from the two given integers.
+Write a function that mimics (without the use of <<) the left shift operator and returns the result from the two given integers.*/
 
-Examples
+/* Examples
 shiftToLeft(5, 2) ➞ 20
 
 shiftToLeft(10, 3) ➞ 80
@@ -154,9 +156,14 @@ shiftToLeft(-6, 5) ➞ -192
 
 shiftToLeft(12, 4) ➞ 192
 
-shiftToLeft(46, 6) ➞ 2944 */
+shiftToLeft(46, 6) ➞ 2944  */
 
+/* function shiftToLeft(number1,number2){
+    return number1*(2**number2)
+}
+console.log(shiftToLeft(-32, 2)); */
 
+//----------------------------------------------------------------------------Bakılacak
 
 /* const REGEXP = /blue|red/
 
@@ -175,7 +182,7 @@ Examples
 Notes
 Check the Resources tab if you get stuck. */
 
-
+//----------------------------------------------------------------------------
 
 
 /* Given a total due and an array representing the amount of change in your pocket, determine whether or not you are able to pay for the item. Change will always be represented in the following order: quarters, dimes, nickels, pennies.
@@ -198,7 +205,10 @@ dime: 10 cents / $0.10
 nickel: 5 cents / $0.05
 penny: 1 cent / $0.01 */
 
+/*   */
 
+
+//----------------------------------------------------------------------------
 
 /* Create a function that takes an array of numbers and return "Boom!" if the digit 7 appears in the array. Otherwise, return "there is no 7 in the array".
 
@@ -210,10 +220,27 @@ sevenBoom([8, 6, 33, 100]) ➞ "there is no 7 in the array"
 // None of the items contain 7 within them.
 
 sevenBoom([2, 55, 60, 97, 86]) ➞ "Boom!"
-// 97 contains the number seven.
+// 97 contains the number seven.*/
+
+let list1 = [2, 55, 60, 97, 86]
+let list2=[];
+for (let i = 0; i < list1.length; i++) {
+        list2.push(String(list1[i]))}
+for (let k = 0; k < list2.length; k++ ){
+    for (let j = 0; j < list2[k].length; j++) {
+           if (list2[k][j]==7) {
+               console.log("tuncay");
+               break;
+           }else{
+               console.log("Gamze");
+           }
+        }
+    }
 
 
-Input: s = "abcabcbb"
+
+
+/* Input: s = "abcabcbb"
 Output: 3
 Explanation: The answer is "abc", with the length of 3.
 Example 2:
@@ -229,7 +256,82 @@ Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring. */
 
 
-
+//----------------------------------------------------------------------------
 
 
 /* Given a string s, find the length of the longest substring without repeating characters. */
+
+
+//----------------------------------------------------------------------------
+/* Create a function that takes an array of strings and returns an array with only the strings that have numbers in them. If there are no strings containing numbers, return an empty array.
+
+Examples
+numInStr(["1a", "a", "2b", "b"]) ➞ ["1a", "2b"]
+
+numInStr(["abc", "abc10"]) ➞ ["abc10"]
+
+numInStr(["abc", "ab10c", "a10bc", "bcd"]) ➞ ["ab10c", "a10bc"]
+
+numInStr(["this is a test", "test1"]) ➞ ["test1"] */
+
+
+
+//----------------------------------------------------------------------------
+
+/* A boomerang is a V-shaped sequence that is either upright or upside down. Specifically, a boomerang can be defined as: sub-array of length 3, with the first and last digits being the same and the middle digit being different.
+
+Some boomerang examples:
+
+[3, 7, 3], [1, -1, 1], [5, 6, 5]
+Create a function that returns the total number of boomerangs in an array.
+
+To illustrate:
+
+[3, 7, 3, 2, 1, 5, 1, 2, 2, -2, 2]
+// 3 boomerangs in this sequence:  [3, 7, 3], [1, 5, 1], [2, -2, 2]
+Be aware that boomerangs can overlap, like so:
+
+[1, 7, 1, 7, 1, 7, 1]
+// 5 boomerangs (from left to right): [1, 7, 1], [7, 1, 7], [1, 7, 1], [7, 1, 7], and [1, 7, 1]
+Examples
+countBoomerangs([9, 5, 9, 5, 1, 1, 1]) ➞ 2
+
+countBoomerangs([5, 6, 6, 7, 6, 3, 9]) ➞ 1
+
+countBoomerangs([4, 4, 4, 9, 9, 9, 9]) ➞ 0
+Notes
+[5, 5, 5] (triple identical digits) is NOT considered a boomerang because the middle digit is identical to the first and last. */
+
+//----------------------------------------------------------------------------
+
+/* Create a function that determines whether a number is Oddish or Evenish. A number is Oddish if the sum of all of its digits is odd, and a number is Evenish if the sum of all of its digits is even. If a number is Oddish, return "Oddish". Otherwise, return "Evenish".
+For example, oddishOrEvenish(121) should return "Evenish", since 1 + 2 + 1 = 4. oddishOrEvenish(41) should return "Oddish", since 4 + 1 = 5.
+Examples
+oddishOrEvenish(43) ➞ "Oddish" */
+// 4 + 3 = 7
+// 7 % 2 = 1
+
+/* oddishOrEvenish(373) ➞ "Oddish" */
+// 3 + 7 + 3 = 13
+// 13 % 2 = 1
+
+/* oddishOrEvenish(4433) ➞ "Evenish" */
+// 4 + 4 + 3 + 3 = 14
+// 14 % 2 = 0
+
+//----------------------------------------------------------------------------
+
+//Create a function that calculates the number of different squares in an n * n square grid. Check the Resources tab.
+
+/* Examples
+numberSquares(2) ➞ 5
+
+numberSquares(4) ➞ 30
+
+numberSquares(5) ➞ 55
+Explanation
+If n = 0 then the number of squares is 0
+If n = 1 then the number of squares is 1 + 0 = 1
+If n = 2 then the number of squares is 2^2 + 1 = 4 + 1 = 5
+If n = 3 then the number of squares is 3^2 + 5 = 9 + 5 = 14
+As you can see, for each value of n the number of squares is n squared + the number of squares from the previous value of n  */
