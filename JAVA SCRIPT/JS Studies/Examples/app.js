@@ -221,7 +221,7 @@ sevenBoom([8, 6, 33, 100]) ➞ "there is no 7 in the array"
 
 sevenBoom([2, 55, 60, 97, 86]) ➞ "Boom!"
 // 97 contains the number seven.*/
-
+/* 
 let list1 = [2, 55, 60, 97, 86]
 let list2=[];
 for (let i = 0; i < list1.length; i++) {
@@ -235,7 +235,10 @@ for (let k = 0; k < list2.length; k++ ){
                console.log("Gamze");
            }
         }
-    }
+    } */
+
+let name1="Tuncay"
+console.log(name1[2]);
 
 
 
