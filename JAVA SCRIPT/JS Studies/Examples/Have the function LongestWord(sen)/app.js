@@ -1,17 +1,12 @@
-//   Create a function to partition an array from left to right.
-// Examples
-// movingPartition([-1, -1, -1, -1])
-// ➞ [[[-1], [-1, -1, -1]], [[-1, -1], [-1, -1]], [[-1, -1, -1], [-1]]]
-// movingPartition([1, 2, 3, 4, 5])
-// ➞ [[[1], [2, 3, 4, 5]], [[1, 2], [3, 4, 5]], [[1, 2, 3], [4, 5]], [[1, 2, 3, 4], [5]]]
-// movingPartition([]) ➞ []
-// Notes
-// With an n input, your output should be an array containing n-1 subarrays. Each subarray should have two elements: the left and the right side of the partition (both should be non-empty, unless the input array is empty).
-// An empty array should return an empty array: []
+/* Have the function LongestWord(sen) take the sen parameter being passed and return the longest word in the string. If there are two or more words that are the same length, return the first word from the string with that length. Ignore punctuation and assume sen will not be empty. Words may also contain numbers, for example "Hello world123 567"
+Examples
+Input: "fun&!! time"
+Output: time
+Input: "I love dogs"
+Output: love */
 
 
-
-function movingPartition(list1){
+/* function movingPartition(list1){
 let list2=[]
 let list3=[]
 for (let i = 1; i < list1.length; i++) {
@@ -22,4 +17,16 @@ for (let i = 1; i < list1.length; i++) {
 }
 return list3;
 }
-console.log(movingPartition([1, 2, 3, 4, 5]));
+console.log(movingPartition([1, 2, 3, 4, 5])); */
+
+
+function LongestWord(word1){
+let word2=word1.split(" ")
+let longWord=word2[0]
+for (let i = 1; i < word2.length; i++) {
+        
+    if (longWord.length < word2[i].length){
+        longWord=word2[i]
+    }
+    } return longWord;
+} console.log(LongestWord("Hello my name is Tuncay Arıcan"));
