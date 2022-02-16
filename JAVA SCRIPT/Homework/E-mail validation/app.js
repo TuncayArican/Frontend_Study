@@ -6,10 +6,8 @@
 1. The maximum length of the extension is 3. */
 
 let button = document.getElementById("button")
-let tuncay = document.getElementById("mail");
-let word1;
-word1=tuncay.value;
-console.log(tuncay.innerText);
+let word = document.getElementById("mail");
+let h1 = document.getElementById("h1");
 let count=0;
 
 function email(word5){ 
@@ -21,27 +19,25 @@ if (count==1) {
    let x=word5.indexOf("@")
    let word2= word5.slice(0,x)
    let word3=word5.slice(x+1)
-   console.log(x);
-   console.log(word2.length);
-   console.log(word3);
    if (word2.length !== 0) {
     let y=word3.indexOf(".")
     let y1= word3.slice(0,y)
     let y2=word3.slice(y+1)
     if (y1.length!==0 & (y2.length==2 || y2. length==3)) {
-        alert("valid");
+        h1.innerText="Valid";
     } else {
-        alert("invalid");
+        h1.innerText="Invalid";
     }
    } else {
-    alert("invalid");
+    h1.innerText="Invalid";
 }
 }else{
-    alert("invalid");
+    h1.innerText="Invalid";
 }}
 
 button.addEventListener("click", ()=>{
-    email(word1)
+    console.log(word.value);
+    email(word.value)
 })
 
 
