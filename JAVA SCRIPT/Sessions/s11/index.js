@@ -86,7 +86,7 @@ const calcAgeArrow = (birthYear) => {
 };
 
 calcAgeArrow(1980); */
-
+/* 
 const teacher = {
   birthYear: 1985,
   calcAge() {
@@ -147,3 +147,81 @@ let anObject = {
 
 console.log(anObject.introduce());
 console.log(anObject.introduce2());
+ */
+// ! CLASS STRUCTURE
+
+// class syntax
+class Pet {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  walk() {
+    console.log('Im walking');
+  }
+  speak() {
+    return 'I like humans';
+  }
+}
+
+console.dir(Pet);
+const myPet = new Pet('Ruby', 3); // instance
+myPet.walk();
+// console.log(myPet);
+
+class Cat extends Pet {
+  #weight = 5555;
+  constructor(name, age, color) {
+    super(name, age);
+    this.color = color;
+  }
+
+  speak() {
+    let prevMsg = super.speak();
+    prevMsg = ' and I like to meow';
+    return this.#weight;
+  }
+}
+
+const muezza = new Cat('Müezza', 2, 'grey');
+muezza.#weight = 4;
+muezza.name = 'Riza';
+console.log(muezza);
+console.log(muezza.speak());
+muezza.walk();
+console.log(muezza.weight);
+
+// ! prototypes
+
+function Pet2(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Pet.prototype.walk = function () {
+  console.log('Im walking');
+};
+Pet.prototype.speak = function () {
+  return 'I like humans';
+};
+
+const myPet2 = new Pet('Karabas', 4);
+console.log(myPet2);
+
+function Cat2(name, age, color) {
+  // constructor function
+  this.name = name;
+  this.age = age;
+  this.color = color;
+}
+
+Cat2.prototype = Object.create(Pet2.prototype);
+
+const pisi = new Cat2('Pisi', 1, 'yellow');
+console.log(pisi);
+pisi.walk();
+
+// const arr = [1, 2, 3];
+// console.log(arr.__proto__);
+// console.dir(((x) => x + 2).__proto__);
