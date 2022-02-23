@@ -4,9 +4,12 @@
 .container{
     padding: 0 1rem;
 }
+//Variable usage
 body{
     background-color: $bgColor;
     font-family: $fontFamily;
     font-size: $fontSize;
     color: $fontColor;
 }
+
+//Nesting Usage

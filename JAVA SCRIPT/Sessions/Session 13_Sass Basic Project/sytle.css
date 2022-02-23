@@ -1,1 +1,16 @@
-/* No CSS *//*# sourceMappingURL=sytle.css.map */
+* {
+  -webkit-box-sizing: boder-box;
+          box-sizing: boder-box;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+body {
+  background-color: pink;
+  font-family: "tahoma";
+  font-size: 1.2rem;
+  color: white;
+}
+/*# sourceMappingURL=sytle.css.map */

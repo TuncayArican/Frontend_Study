@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AEAA,AAAA,CAAC,CAAA;EACG,UAAU,EAAE,SAAS;CACxB;;AFCD,AAAA,UAAU,CAAA;EACN,OAAO,EAAE,MAAM;CAClB;;AAED,AAAA,IAAI,CAAA;EACA,gBAAgB,ECLV,IAAI;EDMV,WAAW,ECHF,QAAQ;EDIjB,SAAS,ECLF,MAAM;EDMb,KAAK,ECPG,KAAK;CDQhB",
     "sources": [
-        "sytle.scss"
+        "sytle.scss",
+        "_variables.scss",
+        "_reset.scss"
     ],
     "names": [],
     "file": "sytle.css"
