@@ -19,7 +19,55 @@
   </head>
   <body>
     <h1>Hello, Clarusway!</h1>
+    <!-- Margin ve Padding=> {property}{sides}-{size}
 
+        {property} => 
+            m: margin p: padding
+
+        {sides} => 
+            t: top
+            b: bottom
+            s: start - left
+            e: end - right
+            x: left, right
+            y: top, bottom
+
+        {size} =>
+            0: mt-0 => margin-top:0 
+            1: mt-1 => margin-top:$spacer * 0.25
+            2: mt-2 => margin-top:$spacer * 0.50
+            3: mt-3 => margin-top:$spacer
+            4: mt-4 => margin-top:$spacer * 1.5
+            5: mt-5 => margin-top:$spacer * 3
+            auto: mx-auto            left-right- equal space -->
+
+    <div class="bg-success p-5">First</div>
+    <div class="bg-info pt-5 ps-3 pb-2">Second</div>
+    <br />
+
+    <div class="bg-success p-5 mb-3">First</div>
+    <div class="bg-info pt-5 ps-3 pb-2 m-5">Second</div>
+
+    <br />
+
+    <div class="bg-info p-3 mx-auto" style="text-align: center; width: 150px">
+      Centered Element
+    </div>
+
+    <div class="bg-secondary p-3 mx-auto text-center" style="width: 150px">
+      Centered Element
+    </div>
+    <br />
+    <div class="bg-info p-3 mx-auto text-start" style="width: 150px">
+      Centered Element
+    </div>
+    <br />
+    <div class="bg-danger p-3 mx-auto text-end" style="width: 150px">
+      Centered Element
+    </div>
+    <br />
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
