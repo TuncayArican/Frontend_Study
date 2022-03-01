@@ -110,9 +110,9 @@ console.log('day2 :>> ', day2); */
 
 const nestedArray = [1, 2, [3, 8], [4, 5, 6], 7];
 const [first, , third, [forth, fifth], seventh] = nestedArray;
-console.log('fifth :>> ', fifth);
+// console.log('fifth :>> ', fifth);
 
-console.log(nestedArray[3][2]);
+// console.log(nestedArray[3][2]);
 
 const note = {
   id: 1,
@@ -134,5 +134,73 @@ function greet(user = 'Guest') {
   console.log(`Hello ${user}`);
 }
 
-greet('Matthew');
-greet();
+// greet('Matthew');
+// greet();
+
+// ******************
+// * SPREAD OPERATOR
+// ******************
+// ...
+
+let newHotel = { ...hotel };
+
+newHotel.brand = 'Hotel California';
+
+// console.log('hotel.brand :>> ', hotel.brand);
+// console.log('newHotel.brand :>> ', newHotel.brand);
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = [...arr1, 11, ...arr2, 7, 8, 9];
+console.log('arr3 :>> ', arr3);
+const arr7 = [33];
+arr7.push(...arr1); // arr7 = [33, 1, 2, 3];
+console.log('arr7 :>> ', arr7);
+let arr4 = arr1;
+arr4.push(42);
+
+// console.log('arr4 :>> ', arr4);
+// console.log('arr1 :>> ', arr1);
+
+const person = {
+  firstName: 'Barry',
+  birthYear: 1977,
+};
+
+const newPerson = {
+  ...person,
+  firstName: 'John',
+  city: 'NY',
+};
+console.log('person :>> ', person);
+console.log('newPerson :>> ', newPerson);
+
+const { sat, ...weekdays } = hotel.receptionHours;
+console.log('sat :>> ', sat);
+console.log('weekdays :>> ', weekdays);
+
+// ******************
+// * REST OPERATOR
+// ******************
+
+function sum(...numbers) {
+  let total = 0;
+  numbers.forEach((i) => {
+    total = !isNaN(i) ? total + i : total;
+  });
+  return total;
+}
+
+console.log(sum(2, 3, 6, 7, 'Mesut', 11));
+
+// ******************
+// * NULLISH OPERATOR
+// ******************
+
+const temperature = null; // = 0; // = 4;
+
+let result = temperature != null && temperature != undefined ? temperature : 'ERROR';
+console.log(result);
+const tempStatus = `Temperature is ${temperature ?? 'ERROR'}`;
+
+console.log(tempStatus);
