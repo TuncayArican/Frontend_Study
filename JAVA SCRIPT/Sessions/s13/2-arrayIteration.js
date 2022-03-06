@@ -186,17 +186,53 @@ const newPersonels = personels.map((p) => {
 
 console.log(newPersonels);
 
+
+
 //* EXAMPLE4: List the person's names whose age is under 33.
+const underthirtythree = personels.filter((p) => p.age < 33).map((p) => p.name);
+console.log(underthirtythree);
+
+// filter((word) => [...word].reverse().join("") === word) 
 
 //* EXAMPLE5: Store the names and ages of the developers as a new Object.
-
+const storeName = personels.filter((p) => p.job === "developer").map((p) => {
+  return {
+    name: p.name,
+    age: p.age,
+  };
+});
+console.log(storeName);
 //* EXAMPLE6: calculate avg age of  people.
+const avarageNew =
+personels.map((p) => p.salary).reduce((acc, salary) => acc + salary, 0) / personels.length;
+console.log(avarageNew);
 
 //*EXAMPLE7: Increase the salaries of developers by 20% and
 //* calculate sum of increased salary of devs.
+const newSalaryAvarage=personels.map((p) => p.salary).map((p) => p*1.2).reduce((acc, salary) => acc + salary, 0);
+console.log(newSalaryAvarage);
+
 
 //*EXAMPLE8: Increase the salaries of developers by 20% and
 //* update the personels object.
 
+const incsalary=personels.map((p) => p.salary).map((p) => p*1.2)
+console.log(incsalary);
+
+
 //*EXAMPLE9: Delete personel whose id is equals to 4;
 //* Exmple: deleteById(4)
+
+const deleteBew = personels.filter((p) => p.id != "4").map((p) => {
+  return {
+    name: p.name,
+    age: p.age,
+    id: p.id,   
+    surname: p.surname,
+    job: p.job,
+    salary: p.salary,
+  };
+});
+console.log(deleteBew);
+
+console.log(personels[1]);
