@@ -123,7 +123,7 @@ console.log(graeterThan20000);
 // *                NESTED ARRAY ITERATION (JSON)
 // * ======================================================
 
-const personels = [
+let personels = [
   {
     id: 1,
     name: "Ali",
@@ -204,35 +204,44 @@ const storeName = personels.filter((p) => p.job === "developer").map((p) => {
 console.log(storeName);
 //* EXAMPLE6: calculate avg age of  people.
 const avarageNew =
-personels.map((p) => p.salary).reduce((acc, salary) => acc + salary, 0) / personels.length;
+personels.map((p) => p.age).reduce((acc, age) => acc + age, 0) / personels.length;
 console.log(avarageNew);
 
 //*EXAMPLE7: Increase the salaries of developers by 20% and
 //* calculate sum of increased salary of devs.
-const newSalaryAvarage=personels.map((p) => p.salary).map((p) => p*1.2).reduce((acc, salary) => acc + salary, 0);
+const newSalaryAvarage=personels.map((p) => p.salary*1.2).reduce((acc, salary) => acc + salary, 0);
 console.log(newSalaryAvarage);
 
 
 //*EXAMPLE8: Increase the salaries of developers by 20% and
 //* update the personels object.
 
-const incsalary=personels.map((p) => p.salary).map((p) => p*1.2)
-console.log(incsalary);
+let ali = personels.map(item => (
+  {
+      ...item,
+      salary: item.salary * 1.2
+  }
+))
+console.log(ali);
 
 
 //*EXAMPLE9: Delete personel whose id is equals to 4;
 //* Exmple: deleteById(4)
 
-const deleteBew = personels.filter((p) => p.id != "4").map((p) => {
-  return {
-    name: p.name,
-    age: p.age,
-    id: p.id,   
-    surname: p.surname,
-    job: p.job,
-    salary: p.salary,
-  };
-});
-console.log(deleteBew);
+personels = personels.filter((p) => p.id != "4");
+console.log(personels);
 
-console.log(personels[1]);
+
+
+/*EXAMPLE8: Increase the salaries of developers by 20% and
+//* update the personels object.
+personels.forEach((p)=>{
+  p.job=="developer" ? p.salary=p.salary*1.2 : p.salary
+});
+console.log(personels);
+//*EXAMPLE9: Delete personel whose id is equals to 4;
+//* Exmple: deleteById(4)
+for(let i=0;i<personels.length;i++){
+  personels[i].id==4 ? personels.splice(i,1): personels[i]
+}
+console.log(personels);
