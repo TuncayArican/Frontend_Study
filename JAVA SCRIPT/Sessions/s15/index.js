@@ -68,7 +68,7 @@ const cayDemle = () => {
 
 const suyuKaynat = () => {
   return new Promise((resolve, reject) => {
-    const nasip = Math.floor(Math.random() * 2);
+    const nasip = Math.floor(Math.random() * 5);
     if (nasip) {
       bekle(2000);
       resolve('✅ Su kaynadi');
@@ -79,7 +79,7 @@ const suyuKaynat = () => {
 
 const cayEkle = () => {
   return new Promise((resolve, reject) => {
-    const cayNasibi = Math.floor(Math.random() * 2);
+    const cayNasibi = Math.floor(Math.random() * 10);
     if (cayNasibi) {
       bekle(500);
       resolve('✅ Cay eklendi.');
@@ -94,7 +94,54 @@ const bekle = (ms) => {
 };
 
 const afiyet = (m) => {
-  return '🫖 cay hazir afiyet olsun';
+  return '🫖 Cay hazir afiyet olsun';
 };
 
 // cayDemle();
+
+// *=====================================================
+// *                   ASYNC AWAIT
+// *=====================================================
+
+const prom = new Promise((resolve, reject) => {
+  // console.log('Promise is created');
+  resolve('Promise is resolved');
+});
+
+const func1 = async () => {
+  return 'Async function is resolved';
+};
+
+async function func2() {
+  wait(1000);
+  return 'bla bla';
+}
+
+console.log('prom instanceof Promise :>> ', prom instanceof Promise);
+console.log('func1 instanceof Promise :>> ', func1() instanceof Promise);
+
+// console.log(func2());
+
+// async function func3() {
+//   wait();
+//   throw new Error('something went wrong');
+//   // return Promise.reject(new Error('errror'));
+// }
+
+// func3();
+
+const cayDemle2 = async () => {
+  try {
+    const durum1 = await suyuKaynat();
+    const durum2 = await cayEkle();
+    await bekle(1500);
+    const durum3 = await afiyet();
+    console.log(durum1);
+    console.log(durum2);
+    console.log(durum3);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// cayDemle2();
