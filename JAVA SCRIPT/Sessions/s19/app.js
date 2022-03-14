@@ -12,7 +12,13 @@
 //   });
 
 // const response = await fetch('https://restcountries.com/v3.1/name/Turkey');
-
+const input1=document.getElementById("input")
+const search=document.getElementById("search")
+search.addEventListener("click",()=>{
+  countryHtml=""
+  console.log(input1.value);
+  viewCountry(input1.value);
+})
 const renderCountry = (data, type = 'country') => {
   // const flag = data.flags.svg;
   // const countryName = data.name.common;
@@ -141,5 +147,5 @@ const viewCountry = async (countryName) => {
   }
 };
 
-viewCountry('Turkey');
+/* viewCountry('Turkey'); */
 // console.log(globalData);
