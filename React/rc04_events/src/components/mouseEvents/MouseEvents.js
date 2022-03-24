@@ -1,17 +1,22 @@
-import './styles.css';
-
+import "./styles.css";
 const MouseEvents = () => {
   // click event
   const handleClick = (e) => {
     // console.log(e);
     // console.log(e.type);
-    // console.log(e.target);
-    console.log(e.currentTarget);
-    console.log(e.target.tagName);
+    console.log("target", e.target);
+    console.log("currentTarget", e.currentTarget);
     e.target.tagName === "SPAN" && e.currentTarget.remove();
-  }
+    console.log(e.target.tagName);
+  };
   // doubleClick event
+  const handleDoubleClick = (e) => console.log("innerText", e.target.innerText);
   // mouseMove event
+  const handleMouseMove = (e) => {
+    // console.log(e.nativeEvent.offsetX);
+    console.log(e.pageX);
+    // console.log(e);
+  };
   return (
     <>
       <h2>MouseEvents</h2>
@@ -21,15 +26,15 @@ const MouseEvents = () => {
       <p>
         <span></span> and
       </p>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <ul>
           <li id="todo-1" onClick={handleClick}>
             todo item 1 <span>X</span>
           </li>
-          <li id="todo-2 ">
+          <li id="todo-2 " onDoubleClick={handleDoubleClick}>
             todo item 2 <span>X</span>
           </li>
-          <li>
+          <li onMouseMove={handleMouseMove}>
             todo item 3 <span>X</span>
           </li>
           <li>
@@ -43,5 +48,4 @@ const MouseEvents = () => {
     </>
   );
 };
-
 export default MouseEvents;
