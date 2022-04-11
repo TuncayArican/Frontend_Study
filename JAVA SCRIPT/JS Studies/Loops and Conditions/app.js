@@ -93,3 +93,9 @@ function mult2(a){
             
  }
  console.log(factoriel(6)); */
+
+
+let tuncay = [{location : "istanbul", city: "urfa" , country: "turkey"},2,3,4,5]
+console.log(tuncay[0].location)
+
+
